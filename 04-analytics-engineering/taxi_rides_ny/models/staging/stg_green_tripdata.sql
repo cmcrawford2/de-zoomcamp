@@ -8,7 +8,7 @@ with
     )
 select
     -- identifiers
-    {{ dbt_utils.surrogate_key(["vendorid", "lpep_pickup_datetime"]) }} as tripid,
+    {{ dbt_utils.generate_surrogate_key(["vendorid", "lpep_pickup_datetime"]) }} as tripid,
     {{ dbt.safe_cast("vendorid", api.Column.translate_type("integer")) }} as vendorid,
     {{ dbt.safe_cast("ratecodeid", api.Column.translate_type("integer")) }}
     as ratecodeid,
