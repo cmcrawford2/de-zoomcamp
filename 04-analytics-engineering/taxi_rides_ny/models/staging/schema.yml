@@ -21,7 +21,7 @@ models:
     columns:
       - name: tripid
         data_type: string
-        description: ""
+        description: "Unique id"
         tests:
           - unique:
               severity: warn
